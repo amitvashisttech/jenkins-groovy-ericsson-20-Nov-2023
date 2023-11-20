@@ -14,7 +14,7 @@ sh 01-Install-docker.sh
 sh 02-Dockercompose-Install.sh
 ```
 
-### Step3 : Bring up the master virtalbox instances 
+### Step3 : Bring up the Jenkins instances 
 ```
 docker-compose up -d
 ```
