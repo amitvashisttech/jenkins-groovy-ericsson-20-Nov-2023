@@ -26,7 +26,7 @@ docker-compose ps
 
 ### Step5 : Update the Permission
 ```
-chown -R 1000:1000 /root/jenkins-home
+chown -R 1000:1000 /root/jenkins_home
 ```
 
 
