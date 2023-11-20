@@ -45,3 +45,7 @@ docker logs -f jenkins
 ```
 http://172.31.0.100:8080
 ```
+
+### Step9 : Supply the Default Password 
+
+### Step 10 : Install the Suggested Plugins
