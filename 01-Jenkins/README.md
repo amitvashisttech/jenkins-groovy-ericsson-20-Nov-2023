@@ -24,13 +24,24 @@ docker-compose up -d
 docker-compose ps 
 ```
 
-### Step5 : Check the logs 
+### Step5 : Update the Permission
+```
+chown -R 1000:1000 /root/jenkins-home
+```
+
+
+### Step6 : Let's check.
+```
+docker-compose up -d  
+```
+
+### Step7 : Check the logs 
 ```
 docker ps 
 docker logs -f jenkins 
 ```
 
-### Step6 : Check the Node IP Address & Open the same in brower on Port 8080
+### Step8 : Check the Node IP Address & Open the same in brower on Port 8080
 ```
 http://172.31.0.100:8080
 ```
