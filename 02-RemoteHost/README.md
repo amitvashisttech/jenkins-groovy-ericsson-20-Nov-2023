@@ -1,24 +1,64 @@
-# OpenShift Clients
+## Docker + Jenkins + SSH + Remote Host: 
+       
+### Step1 : Remove the old Jenkins 
+        ```
+        cd 01-Jenkins
+        ```
+        ```
+	docker-compose stop 
+        ```
+        ```
+	docker-compose rm 
+        ```
 
-The OpenShift client `oc` simplifies working with Kubernetes and OpenShift
-clusters, offering a number of advantages over `kubectl` such as easy login,
-kube config file management, and access to developer tools. The `kubectl`
-binary is included alongside for when strict Kubernetes compliance is necessary.
+### Step2: Bring Up Jenkins & Create New Docker Image & Container for Remote Host
+	
+        ```
+	cd ../02-RemoteHost
+        ```
+        ```
+        docker-compose up -d --build
+        ```
+        ```
+	docker exec -it jenkins bash
+        ```
+        ```
+        jenkins@7d4236992c59:~$ ssh remote_user@remote-host
+        ```
 
-To learn more about OpenShift, visit [docs.openshift.com](https://docs.openshift.com)
-and select the version of OpenShift you are using.
 
-## Installing the tools
-
-After extracting this archive, move the `oc` and `kubectl` binaries
-to a location on your PATH such as `/usr/local/bin`. Then run:
-
-    oc login [API_URL]
-
-to start a session against an OpenShift cluster. After login, run `oc` and
-`oc help` to learn more about how to get started with OpenShift.
-
-## License
-
-OpenShift is licensed under the Apache Public License 2.0. The source code for this
-program is [located on github](https://github.com/openshift/origin).
+### Step3: Install SSH Plugin 
+        ```
+        -> Manage Jenkins -> Manage Plugin -> Avaliable -> SSH -> Install without Restart -> Restart Jenkins	  
+        ```
+        ```
+	-> Manage Jenkins -> Credentials -> Global Creds -> Type [Username with Private Key] -> username: remote_user & ssh key add [ key]
+        ```
+        ```
+	-> Manage Jenkins -> Configure -> SSH -> Credentials -> Host : remote-host
+        ```
+	
+### Step4: Create a Remote a Job to Excute on Remote Hosts
+     
+        ```
+        -> New freestyle job [Remote Job] -> Build -> Excute Shell on remote-host using ssh -> 
+        
+        ```
+        ```
+		NAME=Amit
+        echo "Hello $NAME and Current Time is $(date)" > /tmp/remotefile.txt 
+        ```
+        ```
+ 
+     -> Build Now. 	  
+	 
+        ```
+        ```
+	 # docker exec -it  remote-host bash
+        ```
+        ```
+        [root@8e9fe757a256 /]# cat /tmp/remotefile.txt
+         Hello Amit and Current Time is Mon Nov 20 07:56:43 UTC 2023
+        [root@8e9fe757a256 /]#
+	 
+        ```
