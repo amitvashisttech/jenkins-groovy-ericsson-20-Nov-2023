@@ -39,6 +39,7 @@ Jenkins Cloud Docker Agents.
 	          Host: tcp://172.31.0.100:4243
 			  Test Connection
 			  Enable [*]
+        
         Step 10.5: Create SSH Credentials for Jenkins Slave
                    Manage Jenkins -> Credentials -> Global Credentials -> Add -> Username and Password:
                    Username: jenkins
