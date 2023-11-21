@@ -1,6 +1,9 @@
 Jenkins Cloud Docker Agents. 
 ===========================
          Step 1: Login the Docker Host Machine.
+         ```
+            export TERM=xterm
+         ```
   
 	 Step 2: Log in to the server and open the docker service file /lib/systemd/system/docker.service. Search for ExecStart and replace that line with the following.
 	    ```
