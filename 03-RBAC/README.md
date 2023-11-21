@@ -45,3 +45,11 @@ Security -> Authentication
 		     -> Add a backup item role as well & test.
 ``` 
 				  
+
+```
+	-> Config View Only Access
+                 -> Manage Jenkins -> Plugin -> Extended Read Permission -> Install. 
+				 -> Manage Jenkins -> Manage and Assigin Roles -> Item roles -> backup-admin -> job -> ExtendedRead [*]
+				 -> Check backup user should be able to view the configuration.
+``` 
+				 
