@@ -39,17 +39,22 @@ Jenkins Cloud Docker Agents.
 	          Host: tcp://172.31.0.100:4243
 			  Test Connection
 			  Enable [*]
+        Step 10.5: Create SSH Credentials for Jenkins Slave
+                   Manage Jenkins -> Credentials -> Global Credentials -> Add -> Username and Password:
+                   Username: jenkins
+                   Password: passowrd 
+                   Decription: jenkins-slave-credentials
 			  
 	Step 11: Now, from “Docker Agent Template” dropdown, click the “Add Docker template” and fill in the details based on the explanation	
 
             Name : jenkins-slave-ssh
             Label : jenkins-slave-ssh			
-			Docker Image : jenkins-slave-2
+			Docker Image : jenkins-slave
 			Remote File System Root : /home/jenkins
 			Usage : Use this node as much as possible 
 			Connect Method: Connect SSH 
 			      SSH Key : Use configured SSH Credentials
-				  SSH Credentials : jenkins/password 
+				  SSH Credentials : jenkins/password ( Select the jenkins-slave-credentials created in Step 10.5)
 				  Hostkey Verification : Non Verifying Verification Strategy
 			Stop Timeout: 10 
             Pull Strategy: Never Pulled 
