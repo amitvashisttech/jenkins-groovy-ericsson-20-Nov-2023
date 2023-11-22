@@ -21,7 +21,7 @@
 	ansible-playbook play.yaml
 	```
         ```
-	jenkins@e0bed026683b:~/ansible$ ansible-playbook play-1.yaml
+	jenkins@e0bed026683b:~/ansible$ ansible-playbook -i hosts play.yaml
 
 	PLAY [Jenkins & Ansible Test Play] *************************************************************************************************************************
 
