@@ -25,3 +25,10 @@
 	docker exec -it remote-host bash
 	cat /tmp/ansible-file
         ```	 
+
+#### 5. Colorize your playbook outputs  - Install AnsiColor Plugin 
+      ```    
+      -> Configure -> Build Environment -> [*] Color ANSI Console Output 
+      -> Configure -> Build Steps -> Invoke Ansible Playbook -> Colorized stdout [*]
+      -> Re-Run the Jobs 
+      ```
