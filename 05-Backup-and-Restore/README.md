@@ -1,8 +1,8 @@
 ## Backup 
 
-####   -> Manage Jenkins -> Manage Plugin -> ThinBackup -> Install Plugin.
+#### 1. Manage Jenkins -> Manage Plugin -> ThinBackup -> Install Plugin.
   
-####   -> Manage Jenkins -> ThinBackup -> 
+#### 2. Manage Jenkins -> ThinBackup -> 
       Create a BackUp DIR : mkdir -p /var/jenkins_home/jenkins-backup ; chmod 777 -R /var/jenkins_home/jenkins-backup
       Backup Dir : /var/jenkins_home/jenkins-backup
 ```	  
@@ -16,21 +16,21 @@
            - Clean up differential backups
 ```
 
-#### Also Run instant Back : By Clicking "Backup Now" 
+#### 3. Also Run instant Back : By Clicking "Backup Now" 
 
-#### Now you can check the backup in the respective backup location
+#### 4. Now you can check the backup in the respective backup location
 ```
        ls -ltr /root/jenkins_home/jenkins-backup/
 ```
 
 ## Restore 
 
-#### In order to check the restore, first delete one of the job. 
+#### 1. In order to check the restore, first delete one of the job. 
 
-#### Manage Jenkins -> ThinBackup -> Restore Now -> Select the Last Backup
+#### 2. Manage Jenkins -> ThinBackup -> Restore Now -> Select the Last Backup
 
-#### Restart Jenkins 
+#### 3. Restart Jenkins 
 
-#### Login Back to Jenkins & You should be able to see the restore job. 
+#### 4. Login Back to Jenkins & You should be able to see the restore job. 
 
-#### Trigger the Restore Job & Check everything is working as expected or not ? 
+#### 5. Trigger the Restore Job & Check everything is working as expected or not ? 
