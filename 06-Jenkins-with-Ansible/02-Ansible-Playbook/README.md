@@ -11,8 +11,8 @@
 	```
 #### 2. Copy the Playbook to Jenkins Home Dir Ansible Folder 
         ```	
-	cp -rf play-1.yml /root/jenkins_home/ansible
-	chown 1000:1000 -R /root/jenkins_home/ansible/play-1.yml
+	cp -rf play.yml /root/jenkins_home/ansible
+	chown 1000:1000 -R /root/jenkins_home/ansible/play.yml
 	```
 #### 3. Go to Jenkins & Run the playbook 
 	```
