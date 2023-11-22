@@ -15,3 +15,22 @@
            - Backup additional files
            - Clean up differential backups
 ```
+
+#### Also Run instant Back : By Clicking "Backup Now" 
+
+#### Now you can check the backup in the respective backup location
+```
+       ls -ltr /root/jenkins_home/jenkins-backup/
+```
+
+## Restore 
+
+#### In order to check the restore, first delete one of the job. 
+
+#### Manage Jenkins -> ThinBackup -> Restore Now -> Select the Last Backup
+
+#### Restart Jenkins 
+
+#### Login Back to Jenkins & You should be able to see the restore job. 
+
+#### Trigger the Restore Job & Check everything is working as expected or not ? 
