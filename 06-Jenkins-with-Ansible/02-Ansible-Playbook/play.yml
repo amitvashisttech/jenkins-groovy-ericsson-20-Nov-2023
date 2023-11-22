@@ -1,4 +1,4 @@
 - hosts: test1
+  name: "Jenkins & Ansible Test Play"
   tasks:
-   - debug:
-       msg: "{{ MSG }}"
+  - shell: echo "Welcome to the world of Ansible" > /tmp/ansible-file
