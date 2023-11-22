@@ -1,0 +1,4 @@
+- hosts: test1
+  name: "Jenkins & Ansible Test Play"
+  tasks:
+  - shell: echo "Welcome to the world of Ansible & Jenkins" >> /tmp/ansible-file
