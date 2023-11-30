@@ -1,0 +1,40 @@
+// Define a list of environments
+def environments = ['dev', 'qa', 'prod']
+
+// Loop through each environment and create a Jenkins job
+environments.each { environment ->
+    // Define the Jenkins job DSL script
+    def jobDSLScript = """
+        pipeline {
+            agent any
+            stages {
+                stage('Checkout') {
+                    steps {
+echo "Checkout SCM for ${environment}"
+                    }
+                }
+                stage('Build') {
+                    steps {
+                        echo "Building for ${environment} environment"
+                        // Add build steps specific to the environment
+                    }
+                }
+                stage('Deploy') {
+                    steps {
+                        echo "Deploying to ${environment} environment"
+                        // Add deployment steps specific to the environment
+                    }
+                }
+            }
+        }
+    """
+
+    // Create a new Jenkins job using the DSL script
+    pipelineJob("${environment}_pipeline") {
+        definition {
+            cps {
+                script(jobDSLScript)
+            }
+        }
+    }
+}

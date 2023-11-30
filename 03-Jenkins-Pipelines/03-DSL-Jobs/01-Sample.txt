@@ -1,0 +1,7 @@
+# Document : https://plugins.jenkins.io/job-dsl/
+# Add a "Process Job DSLs" build step and paste the script below into the "DSL Script" field.
+job('example') {
+  steps {
+    shell('echo Hello World!')
+  }
+}
