@@ -1,0 +1,17 @@
+@Library('pipeline-library-demo')_
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                script {
+                    def request = libraryResource 'com/jenkinsshlibdemo/request.json'
+                    echo request
+                }
+            }
+        }
+    }
+}
+
