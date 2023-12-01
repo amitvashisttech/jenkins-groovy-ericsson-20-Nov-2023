@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Static') {
+            steps {
+                script {
+                   library("pipeline-library-demo").com.jenkinsshlibdemo.ValidatorUtils.validateInput(this)
+                }
+            }
+        }
+    }
+}
+

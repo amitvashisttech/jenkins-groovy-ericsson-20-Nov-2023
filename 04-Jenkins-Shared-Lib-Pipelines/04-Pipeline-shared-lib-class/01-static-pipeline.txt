@@ -1,0 +1,18 @@
+@Library('pipeline-library-demo')
+import static com.jenkinsshlibdemo.ValidatorUtils.*; 
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Static') {
+            steps {
+                script {
+                    validateInput(this)
+                }
+            }
+        }
+    }
+}
+

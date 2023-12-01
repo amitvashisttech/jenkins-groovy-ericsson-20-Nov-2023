@@ -1,0 +1,16 @@
+@Library('pipeline-library-demo')_
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello Build') {
+            steps {
+                executeInScript({
+                    sh "printenv"
+                })
+            }
+        }
+    }
+}
+
