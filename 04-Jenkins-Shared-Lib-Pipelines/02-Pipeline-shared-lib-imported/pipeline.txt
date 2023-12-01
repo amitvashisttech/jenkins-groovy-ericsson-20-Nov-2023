@@ -1,0 +1,19 @@
+@Library('pipeline-library-demo')
+import com.jenkinsshlibdemo.*;
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    def calculator  = new Calc()
+                    println calculator.add(1,2)
+                }
+        
+            }
+        }
+    }
+}
+
