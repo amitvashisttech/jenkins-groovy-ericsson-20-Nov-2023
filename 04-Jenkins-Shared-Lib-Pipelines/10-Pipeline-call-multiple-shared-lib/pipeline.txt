@@ -1,0 +1,22 @@
+@Library(['pipeline-library-demo', 'pipeline-library-demo2'])_
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Shared-Lib-Demo-1') {
+            steps {
+                echo "Welcome to Shared-Lib-Demo Pipeline No. 1"
+                sayHello 'Jenkins'
+            }
+        }
+    
+        stage('Shared-Lib-Demo-2') {
+            steps {
+                echo "Welcome to Shared-Lib-Demo Pipeline No. 1"
+                sayHi 'Jenkins-2'
+            }
+        }
+    }
+}
+
