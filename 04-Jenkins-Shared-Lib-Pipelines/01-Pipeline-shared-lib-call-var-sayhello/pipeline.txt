@@ -1,0 +1,6 @@
+@Library('pipeline-library-demo')_
+
+stage('Shared-Lib-Demo') {
+    echo "Welcome to Shared-Lib-Demo Pipeline No. 1"
+    sayHello 'Ericsson'
+}
