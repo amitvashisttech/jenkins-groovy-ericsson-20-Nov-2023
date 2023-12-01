@@ -1,0 +1,22 @@
+@Library('pipeline-library-demo')
+import com.jenkinsshlibdemo.*;
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    def car  = new Car(this)
+                    car.numberOfDoors = 3
+                    car.brand="Jeep"
+                    car.model="Compase"
+                    car.printOutCar()
+                }
+        
+            }
+        }
+    }
+}
+
