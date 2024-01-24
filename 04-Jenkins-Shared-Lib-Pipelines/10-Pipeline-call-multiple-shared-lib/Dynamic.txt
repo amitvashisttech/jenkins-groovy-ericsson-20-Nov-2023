@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                  library('pipeline-library-demo')com.jenkinsshlibdemo.ValidatorUtils.validateInput(this)
+                }
+            }
+        }
+        stage('Build 2') {
+            steps {
+                script {
+                  library('pipeline-library-demo2')com.jenkinsshlibdemo.ValidatorUtils2.validateInput(this)
+                }
+            }
+        }
+    }
+}
